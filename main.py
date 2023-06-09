@@ -8,4 +8,3 @@ def start(message):
     bot.send_message(message.chat.id,'кукусик')
 
 bot.polling(none_stop=True)
-# ева топ ин ве ворлд
