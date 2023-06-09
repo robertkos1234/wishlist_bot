@@ -7,4 +7,13 @@ bot = telebot.TeleBot(token)
 def start(message):
     bot.send_message(message.chat.id,'кукусик')
 
+@bot.message_handler(content_types=["text"])
+def return_message(message):
+    if "дурак" in message.text.lower():
+        bot.send_message(message.chat.id,'Сам дурак')
+    elif "крутой" in message.text.lower():
+        bot.send_message(message.chat.id, 'Да я такой')
+    else:
+        bot.send_message(message.chat.id,message.text + " -- это то что вы сказали")
+
 bot.polling(none_stop=True)
